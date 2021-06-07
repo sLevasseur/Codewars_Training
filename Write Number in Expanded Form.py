@@ -10,9 +10,9 @@ def expanded_form(num):
     num_to_list = list(str(num))
     final_list = list()
     for number, base10, in zip(num_to_list, [x for x in range(len(num_to_list), 0, -1)]):
-        if number == "0":
-            continue
-        final_list.append(str(10 ** int(base10 - 1) * int(number)))
+        final_list.append(str(10 ** int(base10 - 1) * int(number))) if number != "0" else "continue"
+
+    return " + ".join(final_list)
 
 
 print(expanded_form(70304))
