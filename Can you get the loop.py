@@ -67,6 +67,7 @@ for node, next_node in zip(nodes, nodes[1:]):
     node.next_node = next_node
 nodes[49].set_next(nodes[21])
 
+
 def loop_size(test_node):
     temp = True
     new_node = test_node
@@ -79,5 +80,6 @@ def loop_size(test_node):
             loop_size = len(result) - result.index(new_node.get_next()) + 1
 
     return loop_size
+
 
 print(loop_size(nodes))
